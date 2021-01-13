@@ -44,16 +44,17 @@ getEleId("calcPayment").onclick = function () {
 
 
 }
-getEleId("printBill").onclick = function () {
+getEleId("printBill").onclick = function (event) {
     var trip = getTrip();
     if (trip == null) {
-        getEleId("divBill").style.display = "block";
-        getEleId("headBill").innerHTML = "";
-        getEleId("bodyBill").innerHTML = `
-        <tr>
-            <h1 class="text-danger">In hoá đơn thất bại! Vui lòng thử lại</h1>
-        </tr>
-        `;
+        // getEleId("divBill").style.display = "block";
+        // getEleId("headBill").innerHTML = "";
+        // getEleId("bodyBill").innerHTML = `
+        // <tr>
+        //     <h1 class="text-danger">In hoá đơn thất bại! Vui lòng thử lại</h1>
+        // </tr>
+        // `;
+        event.stopPropagation();
         return;
     }
     getEleId("divBill").style.display = "block";
